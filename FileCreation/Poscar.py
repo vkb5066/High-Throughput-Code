@@ -306,12 +306,12 @@ class Poscar:
         outfile = open(path, 'w')
         outfile.write(str(self.comment) + "\n")
         outfile.write("%.5f"%(self.univScaleFactor) + "\n")        
-        outfile.write("%.10f"%(self.superCellVecA[0]) + "\t" + "%.10f"%(self.superCellVecA[1]) + 
-                      "\t" + "%.10f"%(self.superCellVecA[2]) + "\n")        
-        outfile.write("%.10f"%(self.superCellVecB[0]) + "\t" + "%.10f"%(self.superCellVecB[1]) + 
-                      "\t" + "%.10f"%(self.superCellVecB[2]) + "\n")
-        outfile.write("%.10f"%(self.superCellVecC[0]) + "\t" + "%.10f"%(self.superCellVecC[1]) + 
-                      "\t" + "%.10f"%(self.superCellVecC[2]) + "\n")
+        outfile.write("%.10f"%(self.superCellVecA[0]) + "   " + "%.10f"%(self.superCellVecA[1]) + 
+                      "   " + "%.10f"%(self.superCellVecA[2]) + "\n")        
+        outfile.write("%.10f"%(self.superCellVecB[0]) + "   " + "%.10f"%(self.superCellVecB[1]) + 
+                      "   " + "%.10f"%(self.superCellVecB[2]) + "\n")
+        outfile.write("%.10f"%(self.superCellVecC[0]) + "   " + "%.10f"%(self.superCellVecC[1]) + 
+                      "   " + "%.10f"%(self.superCellVecC[2]) + "\n")
         for a in self.atomTypes:
             outfile.write(str(a) + "   ")
         outfile.write("\n")
