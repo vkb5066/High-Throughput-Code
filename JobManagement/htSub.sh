@@ -1,6 +1,6 @@
 #!/bin/csh -f
 
-#Submission script siutable for high-throughput calculations
+#Submission script suitable for high-throughput calculations
 
 set origLoc=`pwd`
 set dirControl="$origLoc/"
@@ -25,9 +25,9 @@ set i=0
 while ($i < $maxDepth)
 
 	foreach j ($dirControl)
-		cd j >~/scratch/uselessFile
+		cd j >.uselessFile
 	
-		if (-f TO_BE_RESUBBED) then
+		if (-f POSCAR) then
 
 #do stuff here------------------------------------------------------------------------------
 if(!(-f SUBFLAG)) then
@@ -36,11 +36,13 @@ if(!(-f SUBFLAG)) then
 	cp $origLoc/KPOINTS .
 	cp $origLoc/INCAR .
 
+	if(!(-f POSCAR0)) then
+		cp POSCAR POSCAR0
+	endif
+
 	if(-f CONTCAR) then
 		set contLines=`cat CONTCAR | wc -l`
 		if("$contLines" > 5) then
-			mv POSCAR POSCAR0
-			mv OUTCAR OUTCAR0
 			mv CONTCAR POSCAR
 		endif
 	endif

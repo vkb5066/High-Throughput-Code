@@ -1,11 +1,8 @@
 #!/bin/csh
 
-#TODO:  There should be logic to find the number of available NODES.  Right now this 
-#assumes that you are using one k-point per job
-
 set wrapLoc=`pwd`
 while(1)
-	#Forced Term Condition.  Use by appending the word STOP to nohup.out
+	#Forced term condition.  Use by appending the word STOP to nohup.out
 	if(-f "nohup.out") then
 		set tai=`tail -1 nohup.out`
 		if("$tai" == "STOP") then
